@@ -104,7 +104,7 @@ npx tsc --noEmit
 
 ## Building local installers
 
-Create a packaged build:
+Create a packaged build using the current app version:
 
 ```bash
 npm run make
@@ -112,7 +112,8 @@ npm run make
 
 Important build note:
 
-- `npm run make` automatically increments the app version before packaging
+- `npm run make` packages using the version already in `package.json`
+- `npm run make:next` increments the minor version before packaging
 - version display uses `major.minor`
 - package metadata stays semver-compatible as `major.minor.0`
 - the version is stamped into the UI, installer, and executable naming
@@ -120,7 +121,8 @@ Important build note:
 Example:
 
 - current package version `1.0.0`
-- next `npm run make` prepares `1.1.0`
+- `npm run make` keeps the build at `1.0.0`
+- `npm run make:next` prepares `1.1.0`
 - the UI and build artifacts display `1.1`
 
 If you only want a packaged app folder without running all makers:
@@ -353,7 +355,7 @@ export interface IImportHandler {
 
 - The codebase intentionally favors typed IPC contracts over loose message passing
 - Cashflow and register now use feature folders and controller/view-model patterns
-- Build versioning is automated during `npm run make`
+- Build versioning is automated during `npm run make:next`
 - The app is local-first and currently centered around personal finance workflows, not cloud sync
 
 ## Suggested first places to read
