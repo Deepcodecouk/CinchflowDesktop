@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".tmp-tests",
+    "types": ["node"],
+    "declaration": false
+  },
+  "include": [
+    "src/shared/**/*.ts",
+    "src/renderer/features/cashflow/components/cashflow-types.ts",
+    "src/renderer/features/cashflow/lib/**/*.ts"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".tmp-tests",
+    "types": ["node"],
+    "declaration": false
+  },
+  "include": [
+    "src/shared/**/*.ts",
+    "src/main/services/dashboard-balance-summary.ts",
+    "src/main/services/dashboard-balance-summary.test.ts"
+  ]
+}
